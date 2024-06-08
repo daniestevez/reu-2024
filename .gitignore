@@ -1,0 +1,5 @@
+*~
+/introduction-slides/*
+!/introduction-slides/*.png
+!/introduction-slides/*.tex
+!/introduction-slides/*.pdf
