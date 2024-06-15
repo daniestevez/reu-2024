@@ -5,7 +5,14 @@ of the Breakthrough Listen Research Experience for Undergraduates 2024.
 
 ## Outline
 
-TBD
+* Session 1. [introduction-slides](introduction-slides). Introductory slides for
+  the tutorials.
+
+* Session 1. [rtlsdr](rtlsdr). Example showing how to receive signals with the
+  RTL-SDR in GNU Radio.
+
+* Session 1. [audio](audio). Example showing how to generate and display audio
+  (soundcard) signals with GNU Radio.
 
 ## Previous years
 
