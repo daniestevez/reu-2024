@@ -14,6 +14,14 @@ of the Breakthrough Listen Research Experience for Undergraduates 2024.
 * Session 1. [audio](audio). Example showing how to generate and display audio
   (soundcard) signals with GNU Radio.
 
+* Session 2. [iq-sampling](iq-sample). Explanation about real sampling and IQ
+  sampling in the context of how an SDR receiver such as the RTL-SDR works.
+  
+* Sessions 2 & 3. [fm-broadcast](fm-broadcast). FM broadcast receiver.
+
+* Session 3. [spectral-analysis](spectral-analysis). Spectral analysis and
+  generation of narrowband and wideband signals with a given CN0.
+
 ## Previous years
 
 This is the list of materials used in previous years:
