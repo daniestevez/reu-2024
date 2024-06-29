@@ -21,6 +21,9 @@ of the Breakthrough Listen Research Experience for Undergraduates 2024.
 
 * Session 3. [spectral-analysis](spectral-analysis). Spectral analysis and
   generation of narrowband and wideband signals with a given CN0.
+  
+* Session 4. [turboseti](turboseti). Generation of data for analysis with
+  turboSETI. Filterbank files and Doppler drift.
 
 ## Previous years
 
