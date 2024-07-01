@@ -141,6 +141,18 @@ blocks:
     coordinate: [504, 100.0]
     rotation: 0
     state: enabled
+- name: time_resampling
+  id: variable
+  parameters:
+    comment: ''
+    value: '100'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [264, 432.0]
+    rotation: 0
+    state: enabled
 - name: tone_amplitude
   id: variable
   parameters:
@@ -219,7 +231,7 @@ blocks:
     minoutbuf: '0'
     offset: '0'
     phase: -np.pi
-    samp_rate: samp_rate
+    samp_rate: samp_rate / time_resampling
     showports: 'False'
     type: float
     waveform: analog.GR_SAW_WAVE
@@ -318,6 +330,24 @@ blocks:
     coordinate: [920, 436.0]
     rotation: 0
     state: enabled
+- name: blocks_repeat_0
+  id: blocks_repeat
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    interp: time_resampling
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [320, 556.0]
+    rotation: 0
+    state: disabled
 - name: blocks_stream_to_vector_0
   id: blocks_stream_to_vector
   parameters:
@@ -351,7 +381,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [320, 540.0]
+    coordinate: [488, 540.0]
     rotation: 0
     state: disabled
 - name: fft_vxx_0
@@ -392,11 +422,12 @@ blocks:
 connections:
 - [analog_noise_source_x_0, '0', blocks_add_xx_0, '0']
 - [analog_sig_source_x_0, '0', blocks_add_xx_0, '1']
-- [analog_sig_source_x_0_0, '0', blocks_vco_c_0, '0']
+- [analog_sig_source_x_0_0, '0', blocks_repeat_0, '0']
 - [blocks_add_xx_0, '0', blocks_head_0, '0']
 - [blocks_complex_to_mag_squared_0, '0', blocks_integrate_xx_0, '0']
 - [blocks_head_0, '0', blocks_stream_to_vector_0, '0']
 - [blocks_integrate_xx_0, '0', blocks_file_sink_0, '0']
+- [blocks_repeat_0, '0', blocks_vco_c_0, '0']
 - [blocks_stream_to_vector_0, '0', fft_vxx_0, '0']
 - [blocks_vco_c_0, '0', blocks_add_xx_0, '1']
 - [fft_vxx_0, '0', blocks_complex_to_mag_squared_0, '0']
