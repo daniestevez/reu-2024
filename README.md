@@ -25,6 +25,12 @@ of the Breakthrough Listen Research Experience for Undergraduates 2024.
 * Session 4. [turboseti](turboseti). Generation of data for analysis with
   turboSETI. Filterbank files and Doppler drift.
 
+* Session 5. [scripting](scripting). Using Parameters and calling a GNU Radio
+  flowgraph from the command line and from Python code.
+
+* Session 5. [python-blocks](python-blocks). Example of usage of a Python Block:
+  narroband RFI cancellation in the spectrum.
+
 ## Previous years
 
 This is the list of materials used in previous years:
