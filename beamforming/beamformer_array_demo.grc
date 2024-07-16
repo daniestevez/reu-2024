@@ -1,0 +1,1483 @@
+options:
+  parameters:
+    author: Daniel Estevez
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: beamformer_array_demo
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Beamformer array demo
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: antenna_separation
+  id: variable
+  parameters:
+    comment: This is in wavelength units
+    value: '100'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [952, 4.0]
+    rotation: 0
+    state: true
+- name: beamforming_angle
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Beamforming angle (deg)
+    type: real
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1368, 12.0]
+    rotation: 0
+    state: true
+- name: beamforming_angle2
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Beamforming angle 2 (deg)
+    type: real
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1368, 108.0]
+    rotation: 0
+    state: true
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '1000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: signal_angle
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Signal 1 angle (deg)
+    type: real
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1152, 12.0]
+    rotation: 0
+    state: true
+- name: signal_angle2
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Signal 2 angle (deg)
+    type: real
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1152, 108.0]
+    rotation: 0
+    state: true
+- name: wideband_bandwidth
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Signal 1 bandwidth (kHz)
+    type: real
+    value: '100'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [704, 4.0]
+    rotation: 0
+    state: true
+- name: wideband_bandwidth2
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Signal 2 bandwidth (kHz)
+    type: real
+    value: '200'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [704, 92.0]
+    rotation: 0
+    state: true
+- name: wideband_frequency
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Signal 1 frequency (kHz)
+    type: real
+    value: '50'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [520, 4.0]
+    rotation: 0
+    state: true
+- name: wideband_frequency2
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Signal 2 frequency (kHz)
+    type: real
+    value: '-150'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [520, 92.0]
+    rotation: 0
+    state: true
+- name: wideband_snr
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Signal 1 SNR (dB)
+    type: real
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [336, 4.0]
+    rotation: 0
+    state: true
+- name: wideband_snr2
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Signal 2 SNR (dB)
+    type: real
+    value: '3'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [336, 92.0]
+    rotation: 0
+    state: true
+- name: analog_noise_source_x_0
+  id: analog_noise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_GAUSSIAN
+    seed: '0'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [240, 1004.0]
+    rotation: 0
+    state: true
+- name: analog_noise_source_x_0_0
+  id: analog_noise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_GAUSSIAN
+    seed: '1'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [240, 1356.0]
+    rotation: 0
+    state: true
+- name: analog_noise_source_x_0_1
+  id: analog_noise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_GAUSSIAN
+    seed: '2'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [248, 1684.0]
+    rotation: 0
+    state: true
+- name: analog_noise_source_x_0_2
+  id: analog_noise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_GAUSSIAN
+    seed: '3'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [256, 2028.0]
+    rotation: 0
+    state: true
+- name: analog_noise_source_x_0_3
+  id: analog_noise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_GAUSSIAN
+    seed: '4'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [256, 2372.0]
+    rotation: 0
+    state: true
+- name: analog_noise_source_x_0_4
+  id: analog_noise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_GAUSSIAN
+    seed: '5'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [248, 2724.0]
+    rotation: 0
+    state: true
+- name: analog_noise_source_x_1
+  id: analog_noise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: np.sqrt(10**(wideband_snr/10.0)/(samp_rate/(wideband_bandwidth*1e3)))
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_GAUSSIAN
+    seed: '100'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [16, 276.0]
+    rotation: 0
+    state: true
+- name: analog_noise_source_x_1_0
+  id: analog_noise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: np.sqrt(10**(wideband_snr2/10.0)/(samp_rate/(wideband_bandwidth2*1e3)))
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_GAUSSIAN
+    seed: '101'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 516.0]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    freq: wideband_frequency*1e3
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    showports: 'False'
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [16, 364.0]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_0_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    freq: wideband_frequency2*1e3
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    showports: 'False'
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 604.0]
+    rotation: 0
+    state: true
+- name: blocks_add_xx_0
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '3'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [448, 904.0]
+    rotation: 0
+    state: true
+- name: blocks_add_xx_0_0
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '3'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [448, 1256.0]
+    rotation: 0
+    state: true
+- name: blocks_add_xx_0_1
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '3'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [456, 1584.0]
+    rotation: 0
+    state: true
+- name: blocks_add_xx_0_2
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '3'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [464, 1928.0]
+    rotation: 0
+    state: true
+- name: blocks_add_xx_0_3
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '3'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [464, 2264.0]
+    rotation: 0
+    state: true
+- name: blocks_add_xx_0_4
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '3'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [456, 2624.0]
+    rotation: 0
+    state: true
+- name: blocks_add_xx_1
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '6'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [912, 1504.0]
+    rotation: 0
+    state: true
+- name: blocks_add_xx_1_0
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '6'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [912, 1744.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_xx_0
+  id: blocks_multiply_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [512, 328.0]
+    rotation: 0
+    state: true
+- name: blocks_multiply_xx_0_0
+  id: blocks_multiply_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [520, 568.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: 0 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(signal_angle))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [280, 840.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_0
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: -0 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(beamforming_angle))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [600, 864.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_0_0
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: -0 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(beamforming_angle2))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [600, 984.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_0_0_0
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: -1 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(beamforming_angle2))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [600, 1336.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_0_0_1
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: -2 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(beamforming_angle2))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [608, 1664.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_0_0_2
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: -3 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(beamforming_angle2))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [616, 2008.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_0_0_3
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: -4 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(beamforming_angle2))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [616, 2344.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_0_0_4
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: -4 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(beamforming_angle2))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [608, 2704.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_0_1
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: -1 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(beamforming_angle))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [600, 1216.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_0_2
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: -2 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(beamforming_angle))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [608, 1544.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_0_3
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: -3 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(beamforming_angle))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [616, 1888.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_0_4
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: -4 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(beamforming_angle))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [616, 2224.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_0_5
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: -4 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(beamforming_angle))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [608, 2576.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_1
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: 0 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(signal_angle2))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [280, 920.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_1_0
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: 1 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(signal_angle2))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [280, 1272.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_1_1
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: 2 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(signal_angle2))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [288, 1600.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_1_2
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: 3 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(signal_angle2))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [296, 1944.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_1_3
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: 4 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(signal_angle2))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [296, 2280.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_1_4
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: 4 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(signal_angle2))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [288, 2640.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_2
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: 1 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(signal_angle))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [280, 1192.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_3
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: 2 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(signal_angle))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [288, 1520.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_4
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: 3 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(signal_angle))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [296, 1864.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_5
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: 4 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(signal_angle))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [296, 2200.0]
+    rotation: 0
+    state: true
+- name: blocks_phase_shift_0_6
+  id: blocks_phase_shift
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    is_radians: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    shift: 4 * 2 * np.pi * antenna_separation * np.sin(np.deg2rad(signal_angle))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [288, 2560.0]
+    rotation: 0
+    state: true
+- name: blocks_throttle2_0
+  id: blocks_throttle2
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [640, 332.0]
+    rotation: 0
+    state: true
+- name: import_0
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: import numpy as np
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 84.0]
+    rotation: 0
+    state: true
+- name: note_0
+  id: note
+  parameters:
+    alias: ''
+    comment: ''
+    note: Antenna 1
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [40, 772.0]
+    rotation: 0
+    state: true
+- name: note_0_0
+  id: note
+  parameters:
+    alias: ''
+    comment: ''
+    note: Antenna 2
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [40, 1132.0]
+    rotation: 0
+    state: true
+- name: note_0_1
+  id: note
+  parameters:
+    alias: ''
+    comment: ''
+    note: Antenna 3
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [48, 1460.0]
+    rotation: 0
+    state: true
+- name: note_0_2
+  id: note
+  parameters:
+    alias: ''
+    comment: ''
+    note: Antenna 4
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [56, 1788.0]
+    rotation: 0
+    state: true
+- name: note_0_3
+  id: note
+  parameters:
+    alias: ''
+    comment: ''
+    note: Antenna 5
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [56, 2132.0]
+    rotation: 0
+    state: true
+- name: note_0_4
+  id: note
+  parameters:
+    alias: ''
+    comment: ''
+    note: Antenna 6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [48, 2484.0]
+    rotation: 0
+    state: true
+- name: pfb_arb_resampler_xxx_0
+  id: pfb_arb_resampler_xxx
+  parameters:
+    affinity: ''
+    alias: ''
+    atten: '100'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nfilts: '32'
+    rrate: samp_rate/(wideband_bandwidth*1e3)
+    samp_delay: '0'
+    taps: ''
+    type: ccf
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [208, 268.0]
+    rotation: 0
+    state: true
+- name: pfb_arb_resampler_xxx_0_0
+  id: pfb_arb_resampler_xxx
+  parameters:
+    affinity: ''
+    alias: ''
+    atten: '100'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nfilts: '32'
+    rrate: samp_rate/(wideband_bandwidth2*1e3)
+    samp_delay: '0'
+    taps: ''
+    type: ccf
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [216, 508.0]
+    rotation: 0
+    state: true
+- name: qtgui_freq_sink_x_0
+  id: qtgui_freq_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    average: '0.1'
+    axislabels: 'True'
+    bw: samp_rate
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    ctrlpanel: 'False'
+    fc: '0'
+    fftsize: '4096'
+    freqhalf: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label: Relative Gain
+    label1: Beamformer 1 output
+    label10: ''''''
+    label2: Beamformer 2 output
+    label3: Beamforming
+    label4: ''''''
+    label5: ''''''
+    label6: ''''''
+    label7: ''''''
+    label8: ''''''
+    label9: ''''''
+    legend: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    nconnections: '2'
+    norm_window: 'False'
+    showports: 'False'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_tag: '""'
+    type: complex
+    units: dB
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    wintype: window.WIN_BLACKMAN_hARRIS
+    ymax: '-15'
+    ymin: '-40'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1080, 1684.0]
+    rotation: 0
+    state: true
+- name: virtual_sink_0
+  id: virtual_sink
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: astro_signal
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [808, 340.0]
+    rotation: 0
+    state: true
+- name: virtual_sink_0_0
+  id: virtual_sink
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: astro_signal2
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [648, 580.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: astro_signal
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [32, 836.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_0
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: astro_signal2
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 916.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_0_0
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: astro_signal2
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 1276.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_0_1
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: astro_signal2
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [32, 1604.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_0_2
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: astro_signal2
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [40, 1932.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_0_3
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: astro_signal2
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [40, 2276.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_0_4
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: astro_signal2
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [32, 2628.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_1
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: astro_signal
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [32, 1196.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_2
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: astro_signal
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [40, 1524.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_3
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: astro_signal
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [48, 1852.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_4
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: astro_signal
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [48, 2196.0]
+    rotation: 0
+    state: true
+- name: virtual_source_0_5
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: astro_signal
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [40, 2548.0]
+    rotation: 0
+    state: true
+
+connections:
+- [analog_noise_source_x_0, '0', blocks_add_xx_0, '2']
+- [analog_noise_source_x_0_0, '0', blocks_add_xx_0_0, '2']
+- [analog_noise_source_x_0_1, '0', blocks_add_xx_0_1, '2']
+- [analog_noise_source_x_0_2, '0', blocks_add_xx_0_2, '2']
+- [analog_noise_source_x_0_3, '0', blocks_add_xx_0_3, '2']
+- [analog_noise_source_x_0_4, '0', blocks_add_xx_0_4, '2']
+- [analog_noise_source_x_1, '0', pfb_arb_resampler_xxx_0, '0']
+- [analog_noise_source_x_1_0, '0', pfb_arb_resampler_xxx_0_0, '0']
+- [analog_sig_source_x_0, '0', blocks_multiply_xx_0, '1']
+- [analog_sig_source_x_0_0, '0', blocks_multiply_xx_0_0, '1']
+- [blocks_add_xx_0, '0', blocks_phase_shift_0_0, '0']
+- [blocks_add_xx_0, '0', blocks_phase_shift_0_0_0, '0']
+- [blocks_add_xx_0_0, '0', blocks_phase_shift_0_0_0_0, '0']
+- [blocks_add_xx_0_0, '0', blocks_phase_shift_0_0_1, '0']
+- [blocks_add_xx_0_1, '0', blocks_phase_shift_0_0_0_1, '0']
+- [blocks_add_xx_0_1, '0', blocks_phase_shift_0_0_2, '0']
+- [blocks_add_xx_0_2, '0', blocks_phase_shift_0_0_0_2, '0']
+- [blocks_add_xx_0_2, '0', blocks_phase_shift_0_0_3, '0']
+- [blocks_add_xx_0_3, '0', blocks_phase_shift_0_0_0_3, '0']
+- [blocks_add_xx_0_3, '0', blocks_phase_shift_0_0_4, '0']
+- [blocks_add_xx_0_4, '0', blocks_phase_shift_0_0_0_4, '0']
+- [blocks_add_xx_0_4, '0', blocks_phase_shift_0_0_5, '0']
+- [blocks_add_xx_1, '0', qtgui_freq_sink_x_0, '0']
+- [blocks_add_xx_1_0, '0', qtgui_freq_sink_x_0, '1']
+- [blocks_multiply_xx_0, '0', blocks_throttle2_0, '0']
+- [blocks_multiply_xx_0_0, '0', virtual_sink_0_0, '0']
+- [blocks_phase_shift_0, '0', blocks_add_xx_0, '0']
+- [blocks_phase_shift_0_0, '0', blocks_add_xx_1, '0']
+- [blocks_phase_shift_0_0_0, '0', blocks_add_xx_1_0, '0']
+- [blocks_phase_shift_0_0_0_0, '0', blocks_add_xx_1_0, '1']
+- [blocks_phase_shift_0_0_0_1, '0', blocks_add_xx_1_0, '2']
+- [blocks_phase_shift_0_0_0_2, '0', blocks_add_xx_1_0, '3']
+- [blocks_phase_shift_0_0_0_3, '0', blocks_add_xx_1_0, '4']
+- [blocks_phase_shift_0_0_0_4, '0', blocks_add_xx_1_0, '5']
+- [blocks_phase_shift_0_0_1, '0', blocks_add_xx_1, '1']
+- [blocks_phase_shift_0_0_2, '0', blocks_add_xx_1, '2']
+- [blocks_phase_shift_0_0_3, '0', blocks_add_xx_1, '3']
+- [blocks_phase_shift_0_0_4, '0', blocks_add_xx_1, '4']
+- [blocks_phase_shift_0_0_5, '0', blocks_add_xx_1, '5']
+- [blocks_phase_shift_0_1, '0', blocks_add_xx_0, '1']
+- [blocks_phase_shift_0_1_0, '0', blocks_add_xx_0_0, '1']
+- [blocks_phase_shift_0_1_1, '0', blocks_add_xx_0_1, '1']
+- [blocks_phase_shift_0_1_2, '0', blocks_add_xx_0_2, '1']
+- [blocks_phase_shift_0_1_3, '0', blocks_add_xx_0_3, '1']
+- [blocks_phase_shift_0_1_4, '0', blocks_add_xx_0_4, '1']
+- [blocks_phase_shift_0_2, '0', blocks_add_xx_0_0, '0']
+- [blocks_phase_shift_0_3, '0', blocks_add_xx_0_1, '0']
+- [blocks_phase_shift_0_4, '0', blocks_add_xx_0_2, '0']
+- [blocks_phase_shift_0_5, '0', blocks_add_xx_0_3, '0']
+- [blocks_phase_shift_0_6, '0', blocks_add_xx_0_4, '0']
+- [blocks_throttle2_0, '0', virtual_sink_0, '0']
+- [pfb_arb_resampler_xxx_0, '0', blocks_multiply_xx_0, '0']
+- [pfb_arb_resampler_xxx_0_0, '0', blocks_multiply_xx_0_0, '0']
+- [virtual_source_0, '0', blocks_phase_shift_0, '0']
+- [virtual_source_0_0, '0', blocks_phase_shift_0_1, '0']
+- [virtual_source_0_0_0, '0', blocks_phase_shift_0_1_0, '0']
+- [virtual_source_0_0_1, '0', blocks_phase_shift_0_1_1, '0']
+- [virtual_source_0_0_2, '0', blocks_phase_shift_0_1_2, '0']
+- [virtual_source_0_0_3, '0', blocks_phase_shift_0_1_3, '0']
+- [virtual_source_0_0_4, '0', blocks_phase_shift_0_1_4, '0']
+- [virtual_source_0_1, '0', blocks_phase_shift_0_2, '0']
+- [virtual_source_0_2, '0', blocks_phase_shift_0_3, '0']
+- [virtual_source_0_3, '0', blocks_phase_shift_0_4, '0']
+- [virtual_source_0_4, '0', blocks_phase_shift_0_5, '0']
+- [virtual_source_0_5, '0', blocks_phase_shift_0_6, '0']
+
+metadata:
+  file_format: 1
+  grc_version: 3.10.6.0
