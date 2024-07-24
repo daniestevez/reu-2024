@@ -30,6 +30,11 @@ of the Breakthrough Listen Research Experience for Undergraduates 2024.
 
 * Session 5. [python-blocks](python-blocks). Example of usage of a Python Block:
   narroband RFI cancellation in the spectrum.
+ 
+* Session 6. [beamforming](beamforming). Beamforming and interferometry.
+
+* Session 7 (field trip to the Allen Telescope
+  Array). [hydrogen-line](hydrogen-line). Hydrogen line observation.
 
 ## Previous years
 
