@@ -76,7 +76,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [536, 524.0]
+    coordinate: [544, 468.0]
     rotation: 0
     state: true
 - name: blocks_multiply_const_xx_0
@@ -112,7 +112,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [336, 532.0]
+    coordinate: [344, 476.0]
     rotation: 0
     state: true
 - name: blocks_null_sink_0
@@ -129,7 +129,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [368, 448.0]
+    coordinate: [344, 416.0]
     rotation: 0
     state: true
 - name: blocks_null_sink_0_0
@@ -146,7 +146,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [368, 624.0]
+    coordinate: [344, 544.0]
     rotation: 0
     state: true
 - name: dgain
@@ -333,8 +333,8 @@ blocks:
     center_freq8: '0'
     center_freq9: '0'
     clock_rate: 0e0
-    clock_source0: external
-    clock_source1: external
+    clock_source0: ''
+    clock_source1: ''
     clock_source2: ''
     clock_source3: ''
     clock_source4: ''
@@ -406,7 +406,7 @@ blocks:
     dc_offs_enb7: default
     dc_offs_enb8: default
     dc_offs_enb9: default
-    dev_addr: '"addr0=10.11.1.20,addr1=10.11.1.22"'
+    dev_addr: '"addr0=10.11.1.20,addr1=10.11.1.22,clock_source=external,time_source=external"'
     dev_args: '""'
     gain0: gaindB
     gain1: gaindB
@@ -651,8 +651,8 @@ blocks:
     stream_args: ''
     stream_chans: '[]'
     sync: sync
-    time_source0: external
-    time_source1: external
+    time_source0: ''
+    time_source1: ''
     time_source2: ''
     time_source3: ''
     time_source4: ''
@@ -708,7 +708,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [720, 500.0]
+    coordinate: [728, 444.0]
     rotation: 0
     state: enabled
 
@@ -724,4 +724,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.6.0
+  grc_version: 3.10.10.0
