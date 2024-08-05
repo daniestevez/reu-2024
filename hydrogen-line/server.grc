@@ -59,7 +59,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [536, 340.0]
+    coordinate: [544, 340.0]
     rotation: 0
     state: true
 - name: blocks_complex_to_interleaved_char_0_0
@@ -192,7 +192,7 @@ blocks:
     label: sampling rate [Hz]
     short_id: b
     type: eng_float
-    value: 3.84e6
+    value: 1.92e6
   states:
     bus_sink: false
     bus_source: false
@@ -686,7 +686,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [720, 316.0]
+    coordinate: [728, 316.0]
     rotation: 0
     state: enabled
 - name: zeromq_pub_sink_0_0

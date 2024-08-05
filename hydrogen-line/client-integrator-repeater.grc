@@ -129,9 +129,24 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [296, 236.0]
+    coordinate: [272, 180.0]
     rotation: 0
     state: true
+- name: blocks_message_debug_0
+  id: blocks_message_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    en_uvec: 'True'
+    log_level: info
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 280.0]
+    rotation: 0
+    state: enabled
 - name: blocks_multiply_const_vxx_0
   id: blocks_multiply_const_vxx
   parameters:
@@ -150,6 +165,26 @@ blocks:
     coordinate: [848, 460.0]
     rotation: 0
     state: true
+- name: blocks_probe_rate_0
+  id: blocks_probe_rate
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha: '0.15'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    mintime: '500.0'
+    name: ''
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [568, 340.0]
+    rotation: 0
+    state: enabled
 - name: blocks_repeat_0
   id: blocks_repeat
   parameters:
@@ -362,10 +397,32 @@ blocks:
     coordinate: [800, 572.0]
     rotation: 0
     state: true
+- name: zeromq_pub_sink_0
+  id: zeromq_pub_sink
+  parameters:
+    address: tcp://*:5555
+    affinity: ''
+    alias: ''
+    bind: 'True'
+    comment: ''
+    drop_on_hwm: 'True'
+    hwm: '-1'
+    key: ''
+    pass_tags: 'False'
+    timeout: '100'
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [568, 212.0]
+    rotation: 0
+    state: enabled
 - name: zeromq_sub_source_0
   id: zeromq_sub_source
   parameters:
-    address: tcp://192.168.89.251:5555
+    address: tcp://10.1.50.11:5555
     affinity: ''
     alias: ''
     bind: 'False'
@@ -392,10 +449,13 @@ connections:
 - [blocks_interleaved_char_to_complex_0, '0', blocks_stream_to_vector_0, '0']
 - [blocks_interleaved_char_to_complex_0, '0', qtgui_freq_sink_x_0, '0']
 - [blocks_multiply_const_vxx_0, '0', blocks_repeat_0, '0']
+- [blocks_probe_rate_0, rate, blocks_message_debug_0, print]
 - [blocks_repeat_0, '0', qtgui_vector_sink_f_0, '0']
 - [blocks_stream_to_vector_0, '0', fft_vxx_0, '0']
 - [fft_vxx_0, '0', blocks_complex_to_mag_squared_0, '0']
 - [zeromq_sub_source_0, '0', blocks_interleaved_char_to_complex_0, '0']
+- [zeromq_sub_source_0, '0', blocks_probe_rate_0, '0']
+- [zeromq_sub_source_0, '0', zeromq_pub_sink_0, '0']
 
 metadata:
   file_format: 1
