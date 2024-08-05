@@ -153,7 +153,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    const: '[1e-9]*nfft'
+    const: '[3e-9]*nfft'
     maxoutbuf: '0'
     minoutbuf: '0'
     type: float
@@ -176,7 +176,7 @@ blocks:
     minoutbuf: '0'
     mintime: '500.0'
     name: ''
-    type: byte
+    type: complex
     vlen: '1'
   states:
     bus_sink: false
@@ -446,6 +446,7 @@ blocks:
 connections:
 - [blocks_complex_to_mag_squared_0, '0', blocks_integrate_xx_0, '0']
 - [blocks_integrate_xx_0, '0', blocks_multiply_const_vxx_0, '0']
+- [blocks_interleaved_char_to_complex_0, '0', blocks_probe_rate_0, '0']
 - [blocks_interleaved_char_to_complex_0, '0', blocks_stream_to_vector_0, '0']
 - [blocks_interleaved_char_to_complex_0, '0', qtgui_freq_sink_x_0, '0']
 - [blocks_multiply_const_vxx_0, '0', blocks_repeat_0, '0']
@@ -454,7 +455,6 @@ connections:
 - [blocks_stream_to_vector_0, '0', fft_vxx_0, '0']
 - [fft_vxx_0, '0', blocks_complex_to_mag_squared_0, '0']
 - [zeromq_sub_source_0, '0', blocks_interleaved_char_to_complex_0, '0']
-- [zeromq_sub_source_0, '0', blocks_probe_rate_0, '0']
 - [zeromq_sub_source_0, '0', zeromq_pub_sink_0, '0']
 
 metadata:
